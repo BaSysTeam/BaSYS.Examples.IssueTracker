@@ -1,0 +1,490 @@
+{
+  "$schema": "../../../../system/schemas/metaObjectStorableSettings.schema.json",
+  "uid": "b2c3d4e5-1111-4111-8111-111111111111",
+  "metaObjectKindUid": "14a60875-e241-4e99-b32d-d45b2726d18b",
+  "title": "Оприходование товаров",
+  "name": "sample_goods_receipt",
+  "memo": "Типовой документ: шапка + ТЧ «Товары» + прямое проведение в регистр остатков из строк ТЧ (по одной записи на строку, без группировки).",
+  "editMethod": 0,
+  "orderByExpression": "",
+  "displayExpression": "",
+  "listFormUid": null,
+  "itemFormUid": null,
+  "showMainImage": false,
+  "isActive": true,
+  "header": {
+    "uid": "b2c3d4e5-2222-4222-8222-222222222222",
+    "title": "header",
+    "name": "header",
+    "memo": "",
+    "autoClearMethod": 0,
+    "columns": [
+      {
+        "uid": "b2c3d4e5-3333-4333-8333-333333333333",
+        "kind": 0,
+        "standardColumnUid": "a39e7b83-e94d-4646-b620-04434fef2f4c",
+        "title": "Номер",
+        "name": "number",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "b327f82a-ea96-416f-9836-785db28eccac",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": true,
+          "required": false,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "b2c3d4e5-4444-4444-8444-444444444444",
+        "kind": 0,
+        "standardColumnUid": "95d36e42-5d4d-4c26-adc1-1319e860b45e",
+        "title": "Удалено",
+        "name": "is_deleted",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "4bff64cf-eb01-4933-9f3d-b902336751f4",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": false,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": false,
+          "showInList": false,
+          "listColumnWidth": ""
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "b2c3d4e5-5555-4555-8555-555555555555",
+        "kind": 0,
+        "standardColumnUid": "f244de36-53c9-4e93-a5a2-94abbed91e02",
+        "title": "Дата",
+        "name": "date",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "9001eafb-efb1-442f-b288-723bb8002b12",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": false,
+          "defaultValue": "now"
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "b2c3d4e5-6666-4666-8666-666666666666",
+        "kind": 0,
+        "standardColumnUid": "9cac33f4-6758-4aab-be4a-b00790bdf452",
+        "title": "Файлы",
+        "name": "is_files",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "4bff64cf-eb01-4933-9f3d-b902336751f4",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": false,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": false,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "b2c3d4e5-7777-4777-8777-777777777777",
+        "kind": 0,
+        "standardColumnUid": "fee422db-18dc-442a-a8dd-01df76c20a98",
+        "title": "Записи",
+        "name": "create_records",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "4bff64cf-eb01-4933-9f3d-b902336751f4",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": false,
+          "unique": false,
+          "defaultValue": "true"
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "b2c3d4e5-8888-4888-8888-888888888888",
+        "kind": 0,
+        "standardColumnUid": null,
+        "title": "Склад",
+        "name": "warehouse",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": false,
+        "dataSettings": {
+          "dataTypeUid": "11111111-aaaa-4aaa-8aaa-111111111111",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "b2c3d4e5-9999-4999-8999-999999999999",
+        "kind": 0,
+        "standardColumnUid": null,
+        "title": "Ответственный",
+        "name": "responsible_person",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": false,
+        "dataSettings": {
+          "dataTypeUid": "22222222-bbbb-4bbb-8bbb-222222222222",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "dependencies": []
+      }
+    ],
+    "indexes": [
+      {
+        "uid": "b2c3d4e5-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "columns": [
+          { "columnUid": "b2c3d4e5-4444-4444-8444-444444444444", "direction": 0 }
+        ]
+      },
+      {
+        "uid": "b2c3d4e5-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+        "columns": [
+          { "columnUid": "b2c3d4e5-5555-4555-8555-555555555555", "direction": 0 }
+        ]
+      },
+      {
+        "uid": "b2c3d4e5-cccc-4ccc-8ccc-cccccccccccc",
+        "columns": [
+          { "columnUid": "b2c3d4e5-6666-4666-8666-666666666666", "direction": 0 }
+        ]
+      }
+    ]
+  },
+  "detailTables": [
+    {
+      "uid": "c3d4e5f6-1111-4111-8111-111111111111",
+      "title": "Товары",
+      "name": "goods",
+      "memo": "Перечень приходуемой номенклатуры с количеством, ценой и суммой.",
+      "autoClearMethod": 0,
+      "columns": [
+        {
+          "uid": "c3d4e5f6-2222-4222-8222-222222222222",
+          "kind": 0,
+          "standardColumnUid": null,
+          "title": "Id",
+          "name": "id",
+          "formula": "",
+          "itemsSource": "",
+          "autoClearMethod": 0,
+          "isStandard": true,
+          "dataSettings": {
+            "dataTypeUid": "daa57cb0-32eb-4709-b61f-4ea023ae31c3",
+            "stringLength": 100,
+            "numberDigits": 2,
+            "primaryKey": true,
+            "required": false,
+            "unique": false,
+            "defaultValue": null
+          },
+          "renderSettings": {
+            "controlKindUid": "",
+            "showInItem": true,
+            "showInList": true,
+            "listColumnWidth": ""
+          },
+          "dependencies": []
+        },
+        {
+          "uid": "c3d4e5f6-3333-4333-8333-333333333333",
+          "kind": 0,
+          "standardColumnUid": null,
+          "title": "Object UID",
+          "name": "object_uid",
+          "formula": "",
+          "itemsSource": "",
+          "autoClearMethod": 0,
+          "isStandard": true,
+          "dataSettings": {
+            "dataTypeUid": "b327f82a-ea96-416f-9836-785db28eccac",
+            "stringLength": 100,
+            "numberDigits": 2,
+            "primaryKey": false,
+            "required": true,
+            "unique": false,
+            "defaultValue": null
+          },
+          "renderSettings": {
+            "controlKindUid": "",
+            "showInItem": true,
+            "showInList": true,
+            "listColumnWidth": ""
+          },
+          "dependencies": []
+        },
+        {
+          "uid": "c3d4e5f6-4444-4444-8444-444444444444",
+          "kind": 0,
+          "standardColumnUid": null,
+          "title": "Row number",
+          "name": "row_number",
+          "formula": "",
+          "itemsSource": "",
+          "autoClearMethod": 0,
+          "isStandard": true,
+          "dataSettings": {
+            "dataTypeUid": "b327f82a-ea96-416f-9836-785db28eccac",
+            "stringLength": 100,
+            "numberDigits": 2,
+            "primaryKey": false,
+            "required": true,
+            "unique": false,
+            "defaultValue": null
+          },
+          "renderSettings": {
+            "controlKindUid": "",
+            "showInItem": true,
+            "showInList": true,
+            "listColumnWidth": ""
+          },
+          "dependencies": []
+        },
+        {
+          "uid": "c3d4e5f6-5555-4555-8555-555555555555",
+          "kind": 0,
+          "standardColumnUid": null,
+          "title": "Номенклатура",
+          "name": "item",
+          "formula": "",
+          "itemsSource": "",
+          "autoClearMethod": 0,
+          "isStandard": false,
+          "dataSettings": {
+            "dataTypeUid": "33333333-cccc-4ccc-8ccc-333333333333",
+            "stringLength": 100,
+            "numberDigits": 2,
+            "primaryKey": false,
+            "required": true,
+            "unique": false,
+            "defaultValue": null
+          },
+          "renderSettings": {
+            "controlKindUid": "",
+            "showInItem": true,
+            "showInList": true,
+            "listColumnWidth": ""
+          },
+          "dependencies": []
+        },
+        {
+          "uid": "c3d4e5f6-6666-4666-8666-666666666666",
+          "kind": 0,
+          "standardColumnUid": null,
+          "title": "Количество",
+          "name": "quantity",
+          "formula": "",
+          "itemsSource": "",
+          "autoClearMethod": 0,
+          "isStandard": false,
+          "dataSettings": {
+            "dataTypeUid": "a05516ac-baae-4f66-9b67-6703998a6a1b",
+            "stringLength": 100,
+            "numberDigits": 3,
+            "primaryKey": false,
+            "required": false,
+            "unique": false,
+            "defaultValue": null
+          },
+          "renderSettings": {
+            "controlKindUid": "",
+            "showInItem": true,
+            "showInList": true,
+            "listColumnWidth": ""
+          },
+          "dependencies": [
+            {
+              "kind": 1,
+              "fieldUid": "c3d4e5f6-8888-4888-8888-888888888888",
+              "tableUid": "c3d4e5f6-1111-4111-8111-111111111111"
+            }
+          ]
+        },
+        {
+          "uid": "c3d4e5f6-7777-4777-8777-777777777777",
+          "kind": 0,
+          "standardColumnUid": null,
+          "title": "Цена",
+          "name": "price",
+          "formula": "",
+          "itemsSource": "",
+          "autoClearMethod": 0,
+          "isStandard": false,
+          "dataSettings": {
+            "dataTypeUid": "a05516ac-baae-4f66-9b67-6703998a6a1b",
+            "stringLength": 100,
+            "numberDigits": 2,
+            "primaryKey": false,
+            "required": false,
+            "unique": false,
+            "defaultValue": null
+          },
+          "renderSettings": {
+            "controlKindUid": "",
+            "showInItem": true,
+            "showInList": true,
+            "listColumnWidth": ""
+          },
+          "dependencies": [
+            {
+              "kind": 1,
+              "fieldUid": "c3d4e5f6-8888-4888-8888-888888888888",
+              "tableUid": "c3d4e5f6-1111-4111-8111-111111111111"
+            }
+          ]
+        },
+        {
+          "uid": "c3d4e5f6-8888-4888-8888-888888888888",
+          "kind": 0,
+          "standardColumnUid": null,
+          "title": "Сумма",
+          "name": "amount",
+          "formula": "$r.quantity * $r.price",
+          "itemsSource": "",
+          "autoClearMethod": 0,
+          "isStandard": false,
+          "dataSettings": {
+            "dataTypeUid": "a05516ac-baae-4f66-9b67-6703998a6a1b",
+            "stringLength": 100,
+            "numberDigits": 2,
+            "primaryKey": false,
+            "required": false,
+            "unique": false,
+            "defaultValue": null
+          },
+          "renderSettings": {
+            "controlKindUid": "",
+            "showInItem": true,
+            "showInList": true,
+            "listColumnWidth": ""
+          },
+          "dependencies": []
+        }
+      ],
+      "indexes": [
+        {
+          "uid": "c3d4e5f6-9999-4999-8999-999999999999",
+          "columns": [
+            { "columnUid": "c3d4e5f6-3333-4333-8333-333333333333", "direction": 0 }
+          ]
+        }
+      ]
+    }
+  ],
+  "commands": [],
+  "recordsSources": [],
+  "recordsSettings": [
+    {
+      "destinationMetaObjectUid": "44444444-dddd-4ddd-8ddd-444444444444",
+      "rows": [
+        {
+          "uid": "d4e5f6a7-2222-4222-8222-222222222222",
+          "sourceUid": "c3d4e5f6-1111-4111-8111-111111111111",
+          "direction": 0,
+          "condition": "",
+          "columns": [
+            {
+              "destinationColumnUid": "55555555-eeee-4eee-8eee-555555555555",
+              "expression": "$h.date"
+            },
+            {
+              "destinationColumnUid": "66666666-ffff-4fff-8fff-666666666666",
+              "expression": "$r.item"
+            },
+            {
+              "destinationColumnUid": "77777777-aaaa-4aaa-8aaa-777777777777",
+              "expression": "$h.warehouse"
+            },
+            {
+              "destinationColumnUid": "88888888-bbbb-4bbb-8bbb-888888888888",
+              "expression": "$r.quantity"
+            },
+            {
+              "destinationColumnUid": "99999999-cccc-4ccc-8ccc-999999999999",
+              "expression": "$r.amount"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Codex command permission rules.
+#
+# Keep BaSYS domain instructions in AGENTS.md, .agents/skills, and
+# .agents/references/basys. This file is only for command execution policy.
+#
+# Add prefix_rule(...) entries here only after a repeated command is known to be
+# safe for this project template.

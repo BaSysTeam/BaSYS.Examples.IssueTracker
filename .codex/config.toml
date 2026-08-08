@@ -1,0 +1,17 @@
+# Project-scoped Codex configuration.
+#
+# This file is intended to be copied as a template to other BaSYS metadata
+# projects. Keep it free of machine-local paths and real credentials.
+
+[mcp_servers.basys-mcp]
+command = "node"
+args = [".codex/mcp/basys-mcp-proxy.js"]
+env_vars = [
+  "BASYS_URL",
+  "BASYS_DB_NAME",
+  "BASYS_LOGIN",
+  "BASYS_PASSWORD",
+]
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+enabled = true

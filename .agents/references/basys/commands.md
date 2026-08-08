@@ -1,0 +1,119 @@
+﻿# Commands
+
+Source: Converted from legacy rule `commands.mdc`.
+
+Codex usage: Conventions for creating commands (programmable, fill, pick-up) on metaobjects in BaSYS. commands are stored as separate `.bjs` script files referenced by filename from the metaobject JSON. Consult whenever the user asks to add a button, action, fill or pick-up to a metaobject form, or when editing files matching `{kind}.{name}.command.{cmdName}.bjs`.
+
+Applies to: `**/*.command.*.bjs`.
+
+---
+
+# Commands
+
+A **command** in BaSYS is an action triggered by a button or menu item on a metaobject form. Commands are declared in the `commands` collection of a metaobject and bound either to the header (`header`) or to one of the detail tables (`detailTables[i]`) via the `tableUid` field.
+
+Documentation: https://basysteam.github.io/BaSys.Docs/ru/commands/
+
+## File Layout
+
+- The body of every command is stored in a **separate `.bjs` file** in the same folder as the metaobject's JSON settings.
+- Filename template: `{kind.name}.{object.name}.command.{command.name}.bjs` (example: `operation/task/operation.task.command.send_message.bjs`).
+- Inside the metaobject's JSON, the `expression` field of a `commands` entry contains **only the filename** (no path); the script body lives in the `.bjs` file.
+- When a command is added or modified, the agent must update **both** sides: the `commands` entry in the JSON **and** the corresponding `.bjs` file.
+- Many real examples live under `operation/` — review them before creating a new one.
+
+## Command Kinds
+
+The `kind` field of a `commands` entry uses the `MetaObjectCommandKinds` enum:
+
+| Value | Name     | Meaning                                                                                       |
+| :---- | :------- | :-------------------------------------------------------------------------------------------- |
+| `0`   | `Custom` | Programmable command — arbitrary JavaScript scenario in a `.bjs` file.                        |
+| `1`   | `Fill`   | Simplified fill command — fills a detail table from a single data-source expression.          |
+| `2`   | `PickUp` | Simplified pick-up command — opens a pick-up dialog for a detail table from a data source.    |
+
+### Programmable commands are the default
+
+**Default to programmable commands (`kind = 0`)** — even for fill and pick-up scenarios. A programmable command gives full control over the logic: data preparation, waiting indicator, `isModified` flag, workflow calls, error handling, etc.
+
+Use a simplified `Fill` (`kind = 1`) or `PickUp` (`kind = 2`) command **only** when:
+
+- the metaobject already contains commands of that kind and is being extended in the same style; or
+- the user explicitly asks for the simplified variant.
+
+For programmable pick-up / fill, in the `.bjs` body:
+
+- **Pick-up:** build the source `DataTable` and call `openPickUp(source, '<detailTableName>')`.
+- **Fill:** build the source, then `$t.<detailTableName>.clear().load(source)`; call `setIsModified(true)` if the user should see the form as dirty.
+
+## `commands` Entry Shape
+
+Each entry of the `commands` array has:
+
+- `uid` — a freshly generated UUID v4.
+- `tableUid` — `uid` of the owning table: either `header.uid` (header-bound command) or a `detailTables[i].uid` (detail-table-bound command).
+- `kind` — usually `0` (see above).
+- `title` — the user-facing label of the button / menu item (typically Russian).
+- `name` — the technical identifier in `snake_case` English (e.g. `send_message`, `pick_up_employees`, `load_from_file`).
+- `expression` — the `.bjs` filename for `kind = 0` commands (e.g. `"operation.task.command.send_message.bjs"`); empty string `""` for simplified `Fill` / `PickUp`.
+- `memo` — short Russian description of what the command does.
+- `isActive` — usually `true`.
+- `parameters` — array of `MetaObjectCommandParameter`. Empty `[]` for `kind = 0`. For simplified commands:
+  - `kind = 2` (PickUp): one parameter `{ "name": "data_source", "value": "<await-expression returning DataTable>", "dbType": 16 }`.
+  - `kind = 1` (Fill): same `data_source` parameter plus `{ "name": "clear", "value": "true" | "false", "dbType": 16 }`.
+
+`dbType = 16` corresponds to `String` in the `dbType` enum.
+
+## Execution Context (Kind = 0)
+
+A programmable command runs on the client. Inside the `.bjs` body the following implicit names are available:
+
+| Name | Description                                                                |
+| :--- | :------------------------------------------------------------------------- |
+| `$h` | Header of the data object; access fields via `$h.<columnName>`.            |
+| `$t` | Detail tables of the data object: `$t.<tableName>`.                        |
+| `$r` | The current row — only inside commands bound to a detail table.            |
+
+In addition to all [BaSYS.Fx](https://basysteam.github.io/BaSys.Docs/ru/calculations/) helpers (including the [query builder](https://basysteam.github.io/BaSys.Docs/ru/calculations/queryBuilder.html) `from(...)`), commands have access to form-control functions:
+
+| Function                              | Returns | Description                                             |
+| :------------------------------------ | :------ | :------------------------------------------------------ |
+| `close()`                             | void    | Close the form and return to the list.                  |
+| `getIsModified()`                     | boolean | Current value of the `isModified` flag.                 |
+| `getIsWaiting()`                      | boolean | Current value of the `isWaiting` flag.                  |
+| `openDialog(config)`                  | void    | Open another metaobject's modal form.                   |
+| `openPickUp(source, tableName, …)`    | void    | Open the pick-up dialog into a detail table.            |
+| `recalculate()`                       | Promise | Recompute all formulas of the current object.           |
+| `refresh(tableViewName)`              | void    | Refresh a TableView control by name.                    |
+| `runWorkflow(name, step, params, …)`  | Promise | Run a server workflow and return the named step's data. |
+| `save()`                              | Promise | Save the current data object.                           |
+| `setIsModified(value)`                | void    | Set the `isModified` flag.                              |
+| `setIsWaiting(value)`                 | void    | Show/hide the waiting indicator.                        |
+
+See https://basysteam.github.io/BaSys.Docs/ru/commands/programmableCommands.html for full signatures and examples.
+
+Notes:
+
+- `openPickUp` is available **only** in commands bound to a detail table.
+- `openDialog` is available in a header command of an automatic form, and in commands of designer forms.
+- For long-running operations (queries, `runWorkflow`, file uploads) wrap the work in `setIsWaiting(true)` / `setIsWaiting(false)`.
+- Prefer the BaSYS query builder (`from('kind.name')…query()`) over plain JS for database access.
+
+## Adding a New Command
+
+1. **Decide the owner** — header or a specific detail table. This determines `tableUid` and which features are available (`$r`, `openPickUp`).
+2. **Generate a fresh `uid`** (UUID v4) for the new `commands` entry.
+3. **Pick a `name`** in English `snake_case` (e.g. `send_message`, `pick_up_employees`, `load_from_file`).
+4. **Build the filename** `{kind.name}.{object.name}.command.{command.name}.bjs` and place the file next to the metaobject JSON.
+5. **Add the `commands` entry** with `uid`, `tableUid`, `kind = 0`, `title`, `name`, `expression = "<filename>"`, `memo`, `isActive = true`, `parameters = []`.
+6. **Write the body** of the `.bjs` file using `$h`, `$t`, `$r`, BaSYS.Fx helpers and the form-control functions above.
+7. **Fill `memo`** with a one-sentence Russian description of the command's purpose.
+
+## General Hygiene
+
+- The filename of the `.bjs` file must match the value of `expression` in the JSON exactly.
+- A command's `name` must be unique among commands sharing the same `tableUid` (i.e. on the same header or the same detail table).
+- Comments inside `.bjs` files follow the language already used in surrounding files (typically Russian).
+- Do not introduce third-party npm dependencies — the runtime is provided by the platform.
+
+

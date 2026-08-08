@@ -1,0 +1,249 @@
+﻿# Workflows
+
+Source: Converted from legacy rule `workflows.mdc`.
+
+Codex usage: Conventions for creating and editing workflow (Процесс) metaobjects in BaSYS. Workflows are server-side pipelines of sequential steps — JavaScript scripts, conditions, iterators, data loaders, file readers, Excel mappings, HTTP connectors and SMTP senders. Consult whenever the user asks to create, modify or debug a workflow (процесс), or when editing files under `workflow/` or files matching `workflow.*.step.*.bjs`.
+
+Applies to: `workflow/**/*`.
+
+---
+
+# Workflows (Процессы)
+
+A **workflow** in BaSYS is a server-side pipeline of sequential steps that automates data processing, integrations and notifications. Workflows run on the server (ClearScript engine), can be launched manually, by schedule, by trigger (on create / update / delete of a data object), or from client code via `runWorkflow(...)`.
+
+Documentation: https://basysteam.github.io/BaSys.Docs/ru/workflows/introduction.html
+
+## File Layout
+
+- Kind `workflow` has `storeData = false` and `isReference = false` — settings file must validate against `system/schemas/workflowSettings.schema.json` (set `$schema` to the correct relative path, typically `../../system/schemas/workflowSettings.schema.json`). Do **not** add an entry to `system/dataTypes.json`.
+- Settings file location: `workflow/{name}/workflow.{name}.json`.
+- JavaScript step bodies are stored as **separate `.bjs` files** in the same folder as the JSON, named: `workflow.{name}.step.{stepName}.bjs`.
+- Top-level JSON structure: `$schema`, `uid`, `name`, `title`, `memo`, `isActive`, `version`, `steps` (array of step objects).
+- The kind has no `standardColumns` — workflows have no `header` / `detailTables` / `commands` / `recordsSettings`.
+
+## Steps Overview
+
+Steps execute sequentially. Each step has common fields:
+
+| Field | Description |
+| :---- | :---------- |
+| `uid` | Freshly generated UUID v4. |
+| `previousStepUid` | `uid` of the preceding step (empty string `""` for the first step). |
+| `kindUid` | Fixed UUID identifying the step type (see table below). |
+| `kindName` | Machine name of the step type. |
+| `title` | Human-readable label. |
+| `name` | Technical identifier (`snake_case` English). Must be unique within the workflow. |
+| `memo` | Short description (Russian). |
+| `isActive` | `true` to execute; `false` to skip. |
+
+### Step execution chain
+
+Steps form a **singly-linked list** via `previousStepUid`. The first step has `previousStepUid = ""`. Each subsequent step points to the `uid` of the step that must complete before it. The `if` step can branch into two paths via `trueStepUid` / `falseStepUid`.
+
+### Inter-step data passing
+
+Every step that produces a result stores it under its `name` in a shared `_data` dictionary. Subsequent steps access previous results via `_data.<stepName>`. Inside `{{…}}` template expressions (used in SMTP and message steps), use `{{stepName.fieldName}}` syntax.
+
+## Step Kinds
+
+| `kindName` | `kindUid` | Purpose |
+| :------- | :------ | :------ |
+| `java_script` | `dff616ce-0f40-4e44-a82b-14aa5ee2e4d6` | Execute a JavaScript script (`.bjs` file). |
+| `if` | `9a3a0dc1-b4ed-4679-9f72-0667b7dcfa53` | Conditional branching. |
+| `iterator` | `07e698af-d11b-454b-a7f4-577a0439e92c` | Loop over rows of a DataTable / array. |
+| `iterator_stop` | `ac090927-e291-4421-b9aa-351b8fa51770` | End of the iterator body. |
+| `data_object_loader` | `a7edd0be-6f12-4fac-b88a-4f83acc7dacb` | Create / update data objects from a data source. |
+| `read_file` | `800c9045-1c1c-46d0-a15f-968a43220d1a` | Read a file (interactive upload or attached file). |
+| `excel_mapping` | `762db492-58b2-4e7e-86ca-0b80b0e3aaae` | Parse an Excel file into a DataTable. |
+| `http_connector` | `bb368829-007d-4b8e-87ce-1dadee75c7c3` | Make an HTTP request. |
+| `smtp_send` | `df48f1ed-2bcf-4b1d-b45c-1305b55ce1f6` | Send an email via SMTP. |
+| `message` | `e192c288-154e-4778-b92c-64da27279796` | Log a text message. |
+| `sleep` | `2a5aca6d-2c41-4bd2-9e03-b35df7dab23e` | Pause execution. |
+
+## JavaScript Step (`java_script`)
+
+The most common step type. Runs a BaSYS.FX JavaScript script on the server.
+
+Type-specific field: `expression` — the **filename** of the companion `.bjs` file (e.g. `"workflow.my_proc.step.load_data.bjs"`).
+
+File naming: `workflow.{workflowName}.step.{stepName}.bjs`
+
+The script must `return` a value; that value becomes available to later steps as `_data.<stepName>`. Prefer the BaSYS query builder (`from('kind.name').…query()`) for DB access.
+
+```json
+{
+  "expression": "workflow.fill_calendar.step.data.bjs",
+  "uid": "...",
+  "previousStepUid": "...",
+  "kindUid": "dff616ce-0f40-4e44-a82b-14aa5ee2e4d6",
+  "kindName": "java_script",
+  "title": "Data",
+  "name": "data",
+  "memo": "Загрузка данных для заполнения календаря",
+  "isActive": true
+}
+```
+
+## If Step (`if`)
+
+Evaluates a boolean `condition` expression. Has `trueStepUid` (jump target when true) and `falseStepUid` (when false). Either can be empty string `""` to fall through to the normal next step.
+
+Inside `condition`, access previous step results via `_data.<stepName>`.
+
+```json
+{
+  "condition": "_data.messages != null",
+  "trueStepUid": "<uid of the step to execute when true>",
+  "falseStepUid": "",
+  "uid": "...",
+  "previousStepUid": "...",
+  "kindUid": "9a3a0dc1-b4ed-4679-9f72-0667b7dcfa53",
+  "kindName": "if",
+  "title": "Check data",
+  "name": "check_data",
+  "memo": "Проверка наличия данных",
+  "isActive": true
+}
+```
+
+## Iterator / Iterator Stop (`iterator` + `iterator_stop`)
+
+Loops over rows of a DataTable returned by a previous step. All steps between the `iterator` and `iterator_stop` execute once per row.
+
+Iterator fields:
+- `sourcePath` — `name` of the step whose result to iterate (e.g. `"mail_list"`).
+- `itemName` — variable name for the current row (e.g. `"item"`). Accessible inside the loop body as `_data.<iteratorStepName>` or in `{{…}}` templates as `{{itemName.field}}`.
+
+`iterator_stop` has no type-specific fields. Its `previousStepUid` points to the last step inside the loop body.
+
+```json
+{
+  "sourcePath": "mail_list",
+  "itemName": "item",
+  "uid": "...", "previousStepUid": "...",
+  "kindUid": "07e698af-d11b-454b-a7f4-577a0439e92c",
+  "kindName": "iterator",
+  "title": "Iterator", "name": "iterator",
+  "memo": "Цикл по списку рассылки", "isActive": true
+}
+```
+
+## Data Object Loader (`data_object_loader`)
+
+Creates or updates data objects from a data source. Type-specific fields:
+
+| Field | Description |
+| :---- | :---------- |
+| `metaObjectKindUid` | Uid of the destination kind (e.g. catalog, operation). |
+| `metaObjectUid` | Uid of the destination metaobject. |
+| `saveRegime` | `0` = CreateUpdate, `1` = Create only, `2` = Update only. |
+| `searchBy` | Field to match existing objects by (for Update / CreateUpdate). |
+| `sourcePath` | `name` of the step whose result provides the data rows. |
+| `condition` | Optional JS boolean expression to filter rows. |
+| `createRecords` | `true` to also run records-creation (проведение) after saving. |
+| `headerMapping` | Array of `FieldMappingRow` — maps source fields to destination header columns. |
+| `tableMapping` | Array of `DetailsTableLoadSettings` — maps source fields to destination detail-table columns. |
+
+`FieldMappingRow` shape: `uid`, `sourceFieldName`, `destinationFieldName`, `defaultValue`, `searchBy` (for reference-type fields), `dataTypeUid`, `createIfNotExist`.
+
+`DetailsTableLoadSettings` shape: `tableUid` (destination detail table), `sourcePath` (field on source row that holds child rows), `mapping` (array of `FieldMappingRow`).
+
+## Read File (`read_file`)
+
+Reads a file for subsequent processing (typically followed by `excel_mapping`).
+
+| Field | Description |
+| :---- | :---------- |
+| `regime` | `0` = Interactive (user uploads via browser), `1` = AttachedFile (read from attached files of a data object). |
+| `outputFormat` | `0` = Binary, `1` = Text. |
+| `attachedFileUidExpression` | Expression or UUID of the attached file (for `regime = 1`). |
+
+## Excel Mapping (`excel_mapping`)
+
+Parses an Excel file (from a previous `read_file` step) into a DataTable.
+
+| Field | Description |
+| :---- | :---------- |
+| `sourcePath` | `name` of the `read_file` step. |
+| `sheetName` | Worksheet name. |
+| `startRow` | 0-based index of the first data row (after header). Typically `1`. |
+| `endRow` | 0-based index of the last row. `0` = read all rows. |
+| `mapping` | Array of `ExcelMappingRow` (`uid`, `sourceFieldName` = Excel column header, `destinationFieldName` = output column name, `dataTypeUid`). |
+
+## HTTP Connector (`http_connector`)
+
+Makes an HTTP request.
+
+| Field | Description |
+| :---- | :---------- |
+| `url` | Request URL. Supports `{{stepName.field}}` templates. |
+| `method` | `0` = GET, `1` = POST, `2` = PUT, `3` = PATCH, `4` = DELETE. |
+| `bodyKind` | `0` = Undefined, `1` = JSON, `2` = FormData, `3` = XWWWFormUrlEncoded, `4` = XML. |
+| `bodyEncoding` | `0` = UTF8, `-1` = None. |
+| `body` | Request body. Supports `{{…}}` templates. |
+| `timeout` | Timeout in seconds. |
+| `logResponse` | Log the response body to the workflow log. |
+| `autoParse` | Auto-parse JSON response into an object. |
+| `bypassSslCertificate` | Skip SSL certificate validation. |
+| `returnResponseInfo` | Return full response info (status code, headers) instead of body only. |
+| `allowSetCookieFromHeaders` | Pass cookies between steps. |
+| `headers` | Array of `NameValueDescriptionRow`. |
+| `parameters` | Array of `NameValueDescriptionRow` (query-string parameters). |
+| `formData` | Array of `NameValueDescriptionRow`. |
+
+## SMTP Send (`smtp_send`)
+
+Sends an email. All string fields support `{{stepName.field}}` template substitution.
+
+Fields: `host`, `user`, `password`, `port`, `timeoutSeconds`, `enableSsl`, `from`, `to`, `CC`, `BCC`, `subject`, `body`, `isBodyHtml`.
+
+## Message (`message`)
+
+Logs a text message. Single field: `message` (supports `{{…}}` templates).
+
+## Sleep (`sleep`)
+
+Pauses execution. Single field: `delay` (string, e.g. `"00:00:05"` for 5 seconds).
+
+## Creating a New Workflow
+
+1. **Create the folder** `workflow/{name}/` (snake_case English, ≤30 chars).
+2. **Create the settings file** `workflow/{name}/workflow.{name}.json` with `$schema`, `uid`, `name`, `title`, `memo`, `isActive = true`, `version = 1`, `steps = [...]`.
+3. **Design the step chain.** The first step has `previousStepUid = ""`. Each subsequent step's `previousStepUid` = the preceding step's `uid`.
+4. **For each `java_script` step**, create a companion `.bjs` file named `workflow.{name}.step.{stepName}.bjs` in the same folder. Set the step's `expression` to that filename.
+5. **Generate fresh `uid` values** for the workflow itself and every step.
+6. **Fill `memo`** on the workflow and on each step.
+7. Kind `workflow` has `isReference = false` — do **not** add an entry to `system/dataTypes.json`.
+
+## Editing an Existing Workflow
+
+- When adding steps, insert them into the `steps` array and update `previousStepUid` links to maintain the chain.
+- When removing steps, update the `previousStepUid` of the step that followed the removed one to point to the step before it.
+- When modifying a `java_script` step, update **both** the JSON entry and the corresponding `.bjs` file.
+- Existing step / workflow names and filenames (including Cyrillic) must **not** be renamed.
+
+## Common Workflow Patterns
+
+### Script → Iterator → Action → Iterator Stop
+
+Prepare a DataTable in a `java_script` step, iterate over rows, perform an action (e.g. `smtp_send`, `data_object_loader`) per row.
+
+### Read File → Excel Mapping → Data Object Loader
+
+Import data from an Excel file into a metaobject.
+
+### Script chain with If
+
+Several `java_script` steps prepare data, an `if` step checks a condition, branches to different follow-up steps.
+
+## General Hygiene
+
+- The `.bjs` filename must match the `expression` value in the JSON exactly.
+- Step `name` must be unique within the workflow.
+- Prefer the BaSYS query builder and `DataTable` helpers inside `.bjs` scripts.
+- Do not introduce third-party npm dependencies — the runtime is provided by the platform.
+- Comments inside `.bjs` files follow the language already used in surrounding files (typically Russian).
+- Many real examples live under `workflow/` — review them before creating a new workflow.
+
+
