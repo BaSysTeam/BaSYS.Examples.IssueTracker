@@ -1,0 +1,27 @@
+{
+  "uid": "4fb2cc15-2579-4d01-aedb-f097430756f7",
+  "title": "Меню",
+  "name": "menu",
+  "prefix": "mnu",
+  "storeData": false,
+  "isReference": false,
+  "allowAttachedFiles": false,
+  "isFilesColumnUid": null,
+  "isDeletedColumnUid": null,
+  "canCreateRecords": false,
+  "useDetailsTables": false,
+  "useForms": false,
+  "usePrintForms": false,
+  "saveHistory": false,
+  "isStandard": true,
+  "version": 2,
+  "memo": "",
+  "iconClass": "pi pi-list",
+  "orderByExpression": "",
+  "displayExpression": "",
+  "recordsSettings": null,
+  "standardColumns": [],
+  "availableRights": [
+    "245f3c21-a190-498b-a515-caa9bfa5ca8e"
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "formatVersion": "2.0",
+  "exportedAtUtc": "2026-08-08T16:01:24.6640158Z",
+  "hashAlgorithm": "SHA-256",
+  "producer": {
+    "application": "BaSys.Constructor",
+    "assemblyVersion": "1.0.0.0"
+  },
+  "source": {
+    "databaseName": "tracker"
+  },
+  "counts": {
+    "kinds": 9,
+    "dataTypes": 9,
+    "metaObjects": 0,
+    "dataViews": 0,
+    "workflows": 0,
+    "menus": 0,
+    "excelReports": 0,
+    "excelReportTemplates": 0,
+    "printForms": 0,
+    "printFormTemplates": 0,
+    "forms": 0,
+    "constructorForms": 0,
+    "dataSourceScripts": 0,
+    "recordsSourceScripts": 0,
+    "commandScripts": 0,
+    "workflowStepScripts": 0,
+    "constructorFormScripts": 0,
+    "files": 17
+  },
+  "files": [
+    {
+      "path": "system/schemas/metaObjectStorableSettings.schema.json",
+      "category": "schema",
+      "uid": null,
+      "kindUid": null,
+      "kindName": null,
+      "name": "MetaObjectStorableSettings",
+      "version": null,
+      "sizeBytes": 14194,
+      "sha256": "1d9d15d9cdf21d2ac9d0b0e63fdcd9dda6489629ba2f652fcf27beb6bfae7c6e"
+    },
+    {
+      "path": "system/schemas/dataViewSettings.schema.json",
+      "category": "schema",
+      "uid": null,
+      "kindUid": null,
+      "kindName": null,
+      "name": "DataViewSettingsDto",
+      "version": null,
+      "sizeBytes": 24765,
+      "sha256": "81a7ad3156ad58afa896611df208b53141a36adbc9e92b9570509cbe7ec2db3b"
+    },
+    {
+      "path": "system/schemas/menuSettings.schema.json",
+      "category": "schema",
+      "uid": null,
+      "kindUid": null,
+      "kindName": null,
+      "name": "MenuSettings",
+      "version": null,
+      "sizeBytes": 3886,
+      "sha256": "5e533aa10b104ca8af56c2a06e3c244e0cef2278e34af73e846b25722f660ac6"
+    },
+    {
+      "path": "system/schemas/excelReportSettings.schema.json",
+      "category": "schema",
+      "uid": null,
+      "kindUid": null,
+      "kindName": null,
+      "name": "ExcelReportSettings",
+      "version": null,
+      "sizeBytes": 3864,
+      "sha256": "fad5180d51ce80aaa90cd3086d47a2273564bf44f7eef3ea62eefbf72858448f"
+    },
+    {
+      "path": "system/schemas/printFormSettings.schema.json",
+      "category": "schema",
+      "uid": null,
+      "kindUid": null,
+      "kindName": null,
+      "name": "PrintFormSettings",
+      "version": null,
+      "sizeBytes": 2137,
+      "sha256": "4e341b595865b9a9b254a193859eda92163c0fad8c923be3b65393530749f0fd"
+    },
+    {
+      "path": "system/schemas/constructorFormSettings.schema.json",
+      "category": "schema",
+      "uid": null,
+      "kindUid": null,
+      "kindName": null,
+      "name": "MetaObjectConstructorFormSettings",
+      "version": null,
+      "sizeBytes": 3832,
+      "sha256": "273fb2aa1b295ace0e19321742f27bf1ed9e0443ab2b935af0cc94de122e4d0a"
+    },
+    {
+      "path": "system/schemas/workflowSettings.schema.json",
+      "category": "schema",
+      "uid": null,
+      "kindUid": null,
+      "kindName": null,
+      "name": "WorkflowSettingsDto",
+      "version": null,
+      "sizeBytes": 19058,
+      "sha256": "6b25b7c269323a80cfb693a7df1893a6f5ea331733f2b1b957c693b0e0e5608a"
+    },
+    {
+      "path": "system/kinds/kind.menu.json",
+      "category": "kind",
+      "uid": "4fb2cc15-2579-4d01-aedb-f097430756f7",
+      "kindUid": "4fb2cc15-2579-4d01-aedb-f097430756f7",
+      "kindName": "menu",
+      "name": "menu",
+      "version": 2,
+      "sizeBytes": 633,
+      "sha256": "c97a137c42a526d3faffaa9eb317aa513204dcf7256ebb6d7bf3b5cc3b57ac8c"
+    },
+    {
+      "path": "system/kinds/kind.operation.json",
+      "category": "kind",
+      "uid": "14a60875-e241-4e99-b32d-d45b2726d18b",
+      "kindUid": "14a60875-e241-4e99-b32d-d45b2726d18b",
+      "kindName": "operation",
+      "name": "operation",
+      "version": 2,
+      "sizeBytes": 4713,
+      "sha256": "96febf37b29c4a5dc670486c5d7fd50aeb75decadbb8712311ad514f4b31c263"
+    },
+    {
+      "path": "system/kinds/kind.excel_report.json",
+      "category": "kind",
+      "uid": "61db4320-2255-4b62-8d1e-30b72168ded0",
+      "kindUid": "61db4320-2255-4b62-8d1e-30b72168ded0",
+      "kindName": "excel_report",
+      "name": "excel_report",
+      "version": 2,
+      "sizeBytes": 655,
+      "sha256": "e7072f745dc957347d6564ae5200a70ed265a77d7c95d1272b045b6ecb2a9cb0"
+    },
+    {
+      "path": "system/kinds/kind.data_view.json",
+      "category": "kind",
+      "uid": "715abcb0-da8a-4442-b9c6-2b6b1c51a5fb",
+      "kindUid": "715abcb0-da8a-4442-b9c6-2b6b1c51a5fb",
+      "kindName": "data_view",
+      "name": "data_view",
+      "version": 2,
+      "sizeBytes": 659,
+      "sha256": "3d00e31566f275f0d15918fbdc2beed502463a1046d42db5116a555a6539384e"
+    },
+    {
+      "path": "system/kinds/kind.enum.json",
+      "category": "kind",
+      "uid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+      "kindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+      "kindName": "enum",
+      "name": "enum",
+      "version": 2,
+      "sizeBytes": 3395,
+      "sha256": "fce539a305db9400bfe9733195e86f88f32486a784f79d9cafd318dc6cb1d621"
+    },
+    {
+      "path": "system/kinds/kind.workflow.json",
+      "category": "kind",
+      "uid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "workflow",
+      "version": 2,
+      "sizeBytes": 642,
+      "sha256": "b8f6d9b2069322c2790a6677bb0e2a1bf0d3bd758fb33f38d81b7ada6c472901"
+    },
+    {
+      "path": "system/kinds/kind.register.json",
+      "category": "kind",
+      "uid": "f3ecb444-8e72-4387-83f1-66c712de1c32",
+      "kindUid": "f3ecb444-8e72-4387-83f1-66c712de1c32",
+      "kindName": "register",
+      "name": "register",
+      "version": 2,
+      "sizeBytes": 1447,
+      "sha256": "46c0c7a1c5cf2b51c15ad2ae9f4bcc5d6b52e740095eb26f7b565c6bd0663af8"
+    },
+    {
+      "path": "system/kinds/kind.records.json",
+      "category": "kind",
+      "uid": "3eabc5d2-9cf5-4a74-95c8-ff2c2015ded3",
+      "kindUid": "3eabc5d2-9cf5-4a74-95c8-ff2c2015ded3",
+      "kindName": "records",
+      "name": "records",
+      "version": 2,
+      "sizeBytes": 4641,
+      "sha256": "2076cacc8f4326465578366a00e37603ab14b0a4ac2c8e6215f349a995d0a74c"
+    },
+    {
+      "path": "system/kinds/kind.catalog.json",
+      "category": "kind",
+      "uid": "032d8377-500f-4631-b435-1f7f69046674",
+      "kindUid": "032d8377-500f-4631-b435-1f7f69046674",
+      "kindName": "catalog",
+      "name": "catalog",
+      "version": 2,
+      "sizeBytes": 3519,
+      "sha256": "7f977bff499705769c3f061d52f1898020fd9846d8c286d9a7834625421cd62f"
+    },
+    {
+      "path": "system/dataTypes.json",
+      "category": "dataTypes",
+      "uid": null,
+      "kindUid": null,
+      "kindName": null,
+      "name": null,
+      "version": null,
+      "sizeBytes": 1960,
+      "sha256": "dbc1c7b3de5a7dbe4ffb8af1bf4dcaedfe299e2647ebac9c6d4a12c383f1a459"
+    }
+  ]
+}
