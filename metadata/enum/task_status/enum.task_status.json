@@ -1,0 +1,170 @@
+{
+  "$schema": "../../system/schemas/metaObjectStorableSettings.schema.json",
+  "uid": "aa300167-ddac-4591-9f16-c0e9e3b00437",
+  "metaObjectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+  "title": "Статус задачи",
+  "name": "task_status",
+  "memo": "Определяет этап жизненного цикла задачи разработки.",
+  "editMethod": 0,
+  "orderByExpression": "",
+  "displayExpression": "",
+  "listFormUid": null,
+  "itemFormUid": null,
+  "showMainImage": false,
+  "saveHistory": 0,
+  "version": 0,
+  "isActive": true,
+  "header": {
+    "uid": "85598ae7-8d46-4838-af30-c257ed50178c",
+    "title": "header",
+    "name": "header",
+    "memo": "",
+    "autoClearMethod": 0,
+    "columns": [
+      {
+        "uid": "3ee2215c-a10d-4d40-82ef-aa96554efa8a",
+        "kind": 0,
+        "standardColumnUid": "3cceebad-7d5a-4943-a102-6267e22227a8",
+        "title": "Name",
+        "name": "name",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "0234c067-7868-46b2-ba8e-e22fae5255cb",
+          "stringLength": 20,
+          "numberDigits": 2,
+          "primaryKey": true,
+          "required": false,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": false
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "469aaa95-8caf-4c3e-ae13-c3aaddedb8e5",
+        "kind": 0,
+        "standardColumnUid": "1e0063d0-288d-494a-8761-1185300d571d",
+        "title": "Is deleted",
+        "name": "is_deleted",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "4bff64cf-eb01-4933-9f3d-b902336751f4",
+          "stringLength": 0,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": false,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": false,
+          "showInList": false,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": false
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "8f91ef4f-31d1-4f44-abe4-2bf14aa1f9b8",
+        "kind": 0,
+        "standardColumnUid": "e647fb57-470e-4547-9a94-2be0f3d0985e",
+        "title": "Code",
+        "name": "code",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "0234c067-7868-46b2-ba8e-e22fae5255cb",
+          "stringLength": 3,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": true,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": true
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "5ff3c41b-3b8a-41e7-aacb-fc8f6a9275e3",
+        "kind": 0,
+        "standardColumnUid": "91a26ae4-5723-4109-8322-7e4e59129239",
+        "title": "Title",
+        "name": "title",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "0234c067-7868-46b2-ba8e-e22fae5255cb",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": true
+        },
+        "dependencies": []
+      }
+    ],
+    "indexes": [
+      {
+        "uid": "9e329887-f464-4af0-af68-1e51e6f529e5",
+        "columns": [
+          {
+            "columnUid": "469aaa95-8caf-4c3e-ae13-c3aaddedb8e5",
+            "direction": 0
+          }
+        ]
+      },
+      {
+        "uid": "99fb0b55-9ea6-40ae-8528-531201eedaf9",
+        "columns": [
+          {
+            "columnUid": "8f91ef4f-31d1-4f44-abe4-2bf14aa1f9b8",
+            "direction": 0
+          }
+        ]
+      }
+    ]
+  },
+  "detailTables": [],
+  "commands": [],
+  "recordsSources": [],
+  "recordsSettings": []
+}

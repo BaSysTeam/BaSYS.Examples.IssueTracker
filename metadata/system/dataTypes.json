@@ -90,10 +90,70 @@
     "typeName": "System.Guid"
   },
   {
+    "uid": "4c056690-24e4-4810-aeb2-9a3875671dea",
+    "kind": "enum",
+    "name": "importance",
+    "title": "Перечисление.Важность",
+    "isPrimitive": false,
+    "dbType": 16,
+    "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+    "typeName": null
+  },
+  {
+    "uid": "6c250d8f-c65b-43bb-84b4-7e0c8271f79d",
+    "kind": "enum",
+    "name": "urgency",
+    "title": "Перечисление.Срочность",
+    "isPrimitive": false,
+    "dbType": 16,
+    "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+    "typeName": null
+  },
+  {
+    "uid": "aa300167-ddac-4591-9f16-c0e9e3b00437",
+    "kind": "enum",
+    "name": "task_status",
+    "title": "Перечисление.Статус задачи",
+    "isPrimitive": false,
+    "dbType": 16,
+    "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+    "typeName": null
+  },
+  {
+    "uid": "04114325-b618-475c-9f84-0d8d21f78750",
+    "kind": "enum",
+    "name": "issue_status",
+    "title": "Перечисление.Статус обращения",
+    "isPrimitive": false,
+    "dbType": 16,
+    "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+    "typeName": null
+  },
+  {
+    "uid": "b03c6bce-e7c3-40df-86a3-c5897a1c6e12",
+    "kind": "enum",
+    "name": "release_status",
+    "title": "Перечисление.Статус релиза",
+    "isPrimitive": false,
+    "dbType": 16,
+    "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+    "typeName": null
+  },
+  {
     "uid": "2005bb12-b7d4-40ee-a3b7-edfdacd079a0",
     "kind": "enum",
     "name": "issue_type",
     "title": "Перечисление.Тип обращения",
+    "isPrimitive": false,
+    "dbType": 16,
+    "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+    "typeName": null
+  },
+  {
+    "uid": "77e25caf-5f94-49ba-b13c-801bc8584aff",
+    "kind": "enum",
+    "name": "primevue_color",
+    "title": "Перечисление.Цвет PrimeVue",
     "isPrimitive": false,
     "dbType": 16,
     "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
