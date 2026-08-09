@@ -1,6 +1,6 @@
 {
   "formatVersion": "2.0",
-  "exportedAtUtc": "2026-08-09T13:40:46.7326988Z",
+  "exportedAtUtc": "2026-08-09T13:50:34.2220307Z",
   "hashAlgorithm": "SHA-256",
   "producer": {
     "application": "BaSys.Constructor",
@@ -11,8 +11,8 @@
   },
   "counts": {
     "kinds": 9,
-    "dataTypes": 20,
-    "metaObjects": 11,
+    "dataTypes": 21,
+    "metaObjects": 12,
     "dataViews": 0,
     "workflows": 7,
     "menus": 0,
@@ -27,7 +27,7 @@
     "commandScripts": 0,
     "workflowStepScripts": 7,
     "constructorFormScripts": 0,
-    "files": 42
+    "files": 43
   },
   "files": [
     {
@@ -214,8 +214,19 @@
       "kindName": null,
       "name": null,
       "version": null,
-      "sizeBytes": 5177,
-      "sha256": "394aef4bccb632f9edd0f18fcf90cc44b62d205348a992ab60a9144157fb6ef9"
+      "sizeBytes": 5487,
+      "sha256": "a53c82da1d71eb444af3ee9604595c3326d69d79910dae9d59ba15cbd788d573"
+    },
+    {
+      "path": "operation/development_task/operation.development_task.json",
+      "category": "metaObject",
+      "uid": "dd6fed5d-4e48-4ead-b475-d13e33aa9ff2",
+      "kindUid": "14a60875-e241-4e99-b32d-d45b2726d18b",
+      "kindName": "operation",
+      "name": "development_task",
+      "version": 1,
+      "sizeBytes": 20248,
+      "sha256": "fd71e49fb128617db348132c0993639e3c02d3aa0ecf4d82e4f2cbf93b836251"
     },
     {
       "path": "operation/issue/operation.issue.json",
@@ -224,9 +235,9 @@
       "kindUid": "14a60875-e241-4e99-b32d-d45b2726d18b",
       "kindName": "operation",
       "name": "issue",
-      "version": 1,
-      "sizeBytes": 14267,
-      "sha256": "24a669bcc88283d08d36c90fff28061c7cf2534ea79f87f7981d3ffea716196a"
+      "version": 5,
+      "sizeBytes": 14265,
+      "sha256": "c14cef4e824a29b24684520f29a2f574faed65df260f822a52dfad3cc49878f7"
     },
     {
       "path": "enum/importance/enum.importance.json",

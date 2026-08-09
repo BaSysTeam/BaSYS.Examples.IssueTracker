@@ -90,6 +90,16 @@
     "typeName": "System.Guid"
   },
   {
+    "uid": "dd6fed5d-4e48-4ead-b475-d13e33aa9ff2",
+    "kind": "operation",
+    "name": "development_task",
+    "title": "Операция.Задача разработки",
+    "isPrimitive": false,
+    "dbType": 11,
+    "objectKindUid": "14a60875-e241-4e99-b32d-d45b2726d18b",
+    "typeName": null
+  },
+  {
     "uid": "16aa4a9e-358d-4c3a-a0ec-a13e6be22ab2",
     "kind": "operation",
     "name": "issue",
