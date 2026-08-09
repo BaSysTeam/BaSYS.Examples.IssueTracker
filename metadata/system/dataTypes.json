@@ -90,6 +90,16 @@
     "typeName": "System.Guid"
   },
   {
+    "uid": "16aa4a9e-358d-4c3a-a0ec-a13e6be22ab2",
+    "kind": "operation",
+    "name": "issue",
+    "title": "Операция.Обращение",
+    "isPrimitive": false,
+    "dbType": 11,
+    "objectKindUid": "14a60875-e241-4e99-b32d-d45b2726d18b",
+    "typeName": null
+  },
+  {
     "uid": "4c056690-24e4-4810-aeb2-9a3875671dea",
     "kind": "enum",
     "name": "importance",
