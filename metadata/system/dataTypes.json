@@ -158,5 +158,15 @@
     "dbType": 16,
     "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
     "typeName": null
+  },
+  {
+    "uid": "00e33d83-9317-4c20-b710-444eaf83902a",
+    "kind": "catalog",
+    "name": "tag",
+    "title": "Справочник.Тег",
+    "isPrimitive": false,
+    "dbType": 11,
+    "objectKindUid": "032d8377-500f-4631-b435-1f7f69046674",
+    "typeName": null
   }
 ]

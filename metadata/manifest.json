@@ -1,6 +1,6 @@
 {
   "formatVersion": "2.0",
-  "exportedAtUtc": "2026-08-09T12:32:04.5083707Z",
+  "exportedAtUtc": "2026-08-09T13:09:45.788849Z",
   "hashAlgorithm": "SHA-256",
   "producer": {
     "application": "BaSys.Constructor",
@@ -11,8 +11,8 @@
   },
   "counts": {
     "kinds": 9,
-    "dataTypes": 16,
-    "metaObjects": 7,
+    "dataTypes": 17,
+    "metaObjects": 8,
     "dataViews": 0,
     "workflows": 7,
     "menus": 0,
@@ -27,7 +27,7 @@
     "commandScripts": 0,
     "workflowStepScripts": 7,
     "constructorFormScripts": 0,
-    "files": 38
+    "files": 39
   },
   "files": [
     {
@@ -214,8 +214,8 @@
       "kindName": null,
       "name": null,
       "version": null,
-      "sizeBytes": 4043,
-      "sha256": "21eb0760bed1acebd05214ac15f04837e6e7353db71b832866afe8b2699635fa"
+      "sizeBytes": 4315,
+      "sha256": "330c18ae8f3e6e92f7b977cb0c47ba6eb59b6ec74c0c9e0eca2df07904385308"
     },
     {
       "path": "enum/importance/enum.importance.json",
@@ -293,6 +293,17 @@
       "version": 1,
       "sizeBytes": 4743,
       "sha256": "3100ffc2ed98a48409f167a5c3132a41ee5b4fe085526a986f0f4dc04ceda296"
+    },
+    {
+      "path": "catalog/tag/catalog.tag.json",
+      "category": "metaObject",
+      "uid": "00e33d83-9317-4c20-b710-444eaf83902a",
+      "kindUid": "032d8377-500f-4631-b435-1f7f69046674",
+      "kindName": "catalog",
+      "name": "tag",
+      "version": 1,
+      "sizeBytes": 6628,
+      "sha256": "1708e0d433d5cead5b0d07c428e25dacb0549dfddeda07620e3060da6082c025"
     },
     {
       "path": "workflow/fill_issue_type/workflow.fill_issue_type.step.data.bjs",
