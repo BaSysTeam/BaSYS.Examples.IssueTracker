@@ -168,5 +168,15 @@
     "dbType": 11,
     "objectKindUid": "032d8377-500f-4631-b435-1f7f69046674",
     "typeName": null
+  },
+  {
+    "uid": "a964c3a2-3846-4f93-93e8-ea0c15952508",
+    "kind": "catalog",
+    "name": "person",
+    "title": "Справочник.Физическое лицо",
+    "isPrimitive": false,
+    "dbType": 11,
+    "objectKindUid": "032d8377-500f-4631-b435-1f7f69046674",
+    "typeName": null
   }
 ]

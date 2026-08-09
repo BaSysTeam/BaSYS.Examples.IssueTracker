@@ -1,6 +1,6 @@
 {
   "formatVersion": "2.0",
-  "exportedAtUtc": "2026-08-09T13:09:45.788849Z",
+  "exportedAtUtc": "2026-08-09T13:22:35.4637368Z",
   "hashAlgorithm": "SHA-256",
   "producer": {
     "application": "BaSys.Constructor",
@@ -11,8 +11,8 @@
   },
   "counts": {
     "kinds": 9,
-    "dataTypes": 17,
-    "metaObjects": 8,
+    "dataTypes": 18,
+    "metaObjects": 9,
     "dataViews": 0,
     "workflows": 7,
     "menus": 0,
@@ -27,7 +27,7 @@
     "commandScripts": 0,
     "workflowStepScripts": 7,
     "constructorFormScripts": 0,
-    "files": 39
+    "files": 40
   },
   "files": [
     {
@@ -214,8 +214,8 @@
       "kindName": null,
       "name": null,
       "version": null,
-      "sizeBytes": 4315,
-      "sha256": "330c18ae8f3e6e92f7b977cb0c47ba6eb59b6ec74c0c9e0eca2df07904385308"
+      "sizeBytes": 4613,
+      "sha256": "3fb82bc1589f32d7720b8cd30c77d11e56660e85924bfb2530fbf12aa10ddb10"
     },
     {
       "path": "enum/importance/enum.importance.json",
@@ -301,9 +301,20 @@
       "kindUid": "032d8377-500f-4631-b435-1f7f69046674",
       "kindName": "catalog",
       "name": "tag",
+      "version": 4,
+      "sizeBytes": 5800,
+      "sha256": "87a088e47716d7f959c2b8482b75ca5bd6d76ebc06c96aa616a26c5f41dd1dc0"
+    },
+    {
+      "path": "catalog/person/catalog.person.json",
+      "category": "metaObject",
+      "uid": "a964c3a2-3846-4f93-93e8-ea0c15952508",
+      "kindUid": "032d8377-500f-4631-b435-1f7f69046674",
+      "kindName": "catalog",
+      "name": "person",
       "version": 1,
-      "sizeBytes": 6628,
-      "sha256": "1708e0d433d5cead5b0d07c428e25dacb0549dfddeda07620e3060da6082c025"
+      "sizeBytes": 9591,
+      "sha256": "07bd33354013e1414ce3d5ae44a3c9595969ae2ca9f251799cb2d806198a6295"
     },
     {
       "path": "workflow/fill_issue_type/workflow.fill_issue_type.step.data.bjs",
