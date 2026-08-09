@@ -1,0 +1,103 @@
+{
+  "$schema": "../../system/schemas/menuSettings.schema.json",
+  "uid": "74559f8f-83c4-4c6c-8ab5-cafddecbc07c",
+  "name": "main",
+  "title": "Основное меню",
+  "memo": "Основная навигация по объектам системы управления разработкой.",
+  "isActive": true,
+  "version": 2,
+  "items": [
+    {
+      "uid": "79ec2590-dd31-4f94-b10b-a5580ac62ef8",
+      "kind": 3,
+      "title": "Разработка",
+      "iconClass": "pi pi-code",
+      "url": "",
+      "isVisible": true,
+      "autoFill": false,
+      "itemsPerColumn": 10,
+      "metaObjectKindUid": "",
+      "items": [
+        {
+          "uid": "842d15e4-9aba-45c0-94c1-572ac98d0aaf",
+          "items": [
+            {
+              "uid": "464ae2e4-fddc-4119-8ab2-d1021a568b4e",
+              "title": "",
+              "isVisible": true,
+              "items": [
+                {
+                  "uid": "0260d0f7-94f3-49c5-a326-57d08f42e7f6",
+                  "kind": 1,
+                  "title": "Обращения",
+                  "iconClass": "pi pi-inbox",
+                  "url": "/app#/data-objects/operation/issue",
+                  "isVisible": true
+                },
+                {
+                  "uid": "aadd5d14-3f48-4d11-893c-d841420be159",
+                  "kind": 1,
+                  "title": "Задачи",
+                  "iconClass": "pi pi-check-square",
+                  "url": "/app#/data-objects/operation/development_task",
+                  "isVisible": true
+                },
+                {
+                  "uid": "6b405a3d-15b3-4370-a739-14e1de871789",
+                  "kind": 1,
+                  "title": "Релизы",
+                  "iconClass": "pi pi-box",
+                  "url": "/app#/data-objects/catalog/release",
+                  "isVisible": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "metaObjectKindUidParsed": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "uid": "609ddfe8-b19b-4e5a-a197-943a297e8160",
+      "kind": 3,
+      "title": "Классификаторы",
+      "iconClass": "pi pi-tags",
+      "url": "",
+      "isVisible": true,
+      "autoFill": false,
+      "itemsPerColumn": 10,
+      "metaObjectKindUid": "",
+      "items": [
+        {
+          "uid": "96b76e9a-acb2-41aa-81a6-52c5f20d18b3",
+          "items": [
+            {
+              "uid": "86ed6cd2-2759-4b40-b717-ba29772c7508",
+              "title": "",
+              "isVisible": true,
+              "items": [
+                {
+                  "uid": "03696bb8-e495-4dce-9554-d94b9b1de263",
+                  "kind": 1,
+                  "title": "Физические лица",
+                  "iconClass": "pi pi-users",
+                  "url": "/app#/data-objects/catalog/person",
+                  "isVisible": true
+                },
+                {
+                  "uid": "4dce2e02-9cc7-414a-9207-811571f5a795",
+                  "kind": 1,
+                  "title": "Теги",
+                  "iconClass": "pi pi-tag",
+                  "url": "/app#/data-objects/catalog/tag",
+                  "isVisible": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "metaObjectKindUidParsed": "00000000-0000-0000-0000-000000000000"
+    }
+  ]
+}

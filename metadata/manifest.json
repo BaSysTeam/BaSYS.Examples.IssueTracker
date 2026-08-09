@@ -1,6 +1,6 @@
 {
   "formatVersion": "2.0",
-  "exportedAtUtc": "2026-08-09T13:50:34.2220307Z",
+  "exportedAtUtc": "2026-08-09T14:06:27.9309377Z",
   "hashAlgorithm": "SHA-256",
   "producer": {
     "application": "BaSys.Constructor",
@@ -12,10 +12,10 @@
   "counts": {
     "kinds": 9,
     "dataTypes": 21,
-    "metaObjects": 12,
+    "metaObjects": 13,
     "dataViews": 0,
     "workflows": 7,
-    "menus": 0,
+    "menus": 1,
     "excelReports": 0,
     "excelReportTemplates": 0,
     "printForms": 0,
@@ -27,7 +27,7 @@
     "commandScripts": 0,
     "workflowStepScripts": 7,
     "constructorFormScripts": 0,
-    "files": 43
+    "files": 45
   },
   "files": [
     {
@@ -224,9 +224,9 @@
       "kindUid": "14a60875-e241-4e99-b32d-d45b2726d18b",
       "kindName": "operation",
       "name": "development_task",
-      "version": 1,
-      "sizeBytes": 20248,
-      "sha256": "fd71e49fb128617db348132c0993639e3c02d3aa0ecf4d82e4f2cbf93b836251"
+      "version": 4,
+      "sizeBytes": 20285,
+      "sha256": "f6dfb5c484204da93345b60cd2c56faaf26c1212e3bb3e1821f5a3179e5328f7"
     },
     {
       "path": "operation/issue/operation.issue.json",
@@ -235,9 +235,9 @@
       "kindUid": "14a60875-e241-4e99-b32d-d45b2726d18b",
       "kindName": "operation",
       "name": "issue",
-      "version": 5,
-      "sizeBytes": 14265,
-      "sha256": "c14cef4e824a29b24684520f29a2f574faed65df260f822a52dfad3cc49878f7"
+      "version": 6,
+      "sizeBytes": 14301,
+      "sha256": "85af179120c7fbc31b69f329e647ca78fc5920d0657a3c7c42cf33ce126342b6"
     },
     {
       "path": "enum/importance/enum.importance.json",
@@ -315,6 +315,17 @@
       "version": 1,
       "sizeBytes": 4743,
       "sha256": "3100ffc2ed98a48409f167a5c3132a41ee5b4fe085526a986f0f4dc04ceda296"
+    },
+    {
+      "path": "register/discussion_message/register.discussion_message.json",
+      "category": "metaObject",
+      "uid": "953c897a-1c23-40ae-bed9-6b6794f855d6",
+      "kindUid": "f3ecb444-8e72-4387-83f1-66c712de1c32",
+      "kindName": "register",
+      "name": "discussion_message",
+      "version": 1,
+      "sizeBytes": 5393,
+      "sha256": "4d127e91cff2b0bb93283c10739a624595f45d029cb1becf76f26dcdd6279db1"
     },
     {
       "path": "catalog/release/catalog.release.json",
@@ -502,6 +513,17 @@
       "version": 2,
       "sizeBytes": 2645,
       "sha256": "5b31397f51e7d6b87382de928f7f997e77df8ec8fe8dbab5d3ed1b1a3d66c7a3"
+    },
+    {
+      "path": "menu/main/menu.main.json",
+      "category": "menu",
+      "uid": "74559f8f-83c4-4c6c-8ab5-cafddecbc07c",
+      "kindUid": "4fb2cc15-2579-4d01-aedb-f097430756f7",
+      "kindName": "menu",
+      "name": "main",
+      "version": 2,
+      "sizeBytes": 3342,
+      "sha256": "5edf8594dbaa711e98e736cf1166b01b00176395a8f3df22f7a6829d0204b62d"
     }
   ]
 }

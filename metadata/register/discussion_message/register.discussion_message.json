@@ -1,0 +1,195 @@
+{
+  "$schema": "../../system/schemas/metaObjectStorableSettings.schema.json",
+  "uid": "953c897a-1c23-40ae-bed9-6b6794f855d6",
+  "metaObjectKindUid": "f3ecb444-8e72-4387-83f1-66c712de1c32",
+  "title": "Сообщение обсуждения",
+  "name": "discussion_message",
+  "memo": "Хранит переписку по обращениям.",
+  "editMethod": 0,
+  "orderByExpression": "created_at",
+  "displayExpression": "",
+  "listFormUid": null,
+  "itemFormUid": null,
+  "showMainImage": false,
+  "saveHistory": 0,
+  "version": 0,
+  "isActive": true,
+  "header": {
+    "uid": "b821ea89-d71c-4c5e-8404-a8ddeabc478c",
+    "title": "header",
+    "name": "header",
+    "memo": "",
+    "autoClearMethod": 0,
+    "columns": [
+      {
+        "uid": "317b3198-271f-416d-81ea-b34ee9a72d98",
+        "kind": 0,
+        "standardColumnUid": "96b5f50b-98de-43fb-aea5-70fc29a35763",
+        "title": "Id",
+        "name": "id",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": true,
+        "dataSettings": {
+          "dataTypeUid": "daa57cb0-32eb-4709-b61f-4ea023ae31c3",
+          "stringLength": 0,
+          "numberDigits": 2,
+          "primaryKey": true,
+          "required": false,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": false
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "66a631db-e3cb-4bb5-9387-8b181b64c26f",
+        "kind": 0,
+        "standardColumnUid": null,
+        "title": "Обращение",
+        "name": "issue",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": false,
+        "dataSettings": {
+          "dataTypeUid": "16aa4a9e-358d-4c3a-a0ec-a13e6be22ab2",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": false
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "8dd7c595-996d-49c1-8bda-d432c2f3faf3",
+        "kind": 0,
+        "standardColumnUid": null,
+        "title": "Дата и время",
+        "name": "created_at",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": false,
+        "dataSettings": {
+          "dataTypeUid": "9001eafb-efb1-442f-b288-723bb8002b12",
+          "stringLength": 0,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": false
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "cd4dfccd-09d3-4745-8719-329383e7656a",
+        "kind": 0,
+        "standardColumnUid": null,
+        "title": "Автор",
+        "name": "author",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": false,
+        "dataSettings": {
+          "dataTypeUid": "a964c3a2-3846-4f93-93e8-ea0c15952508",
+          "stringLength": 100,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": false
+        },
+        "dependencies": []
+      },
+      {
+        "uid": "99ad8da9-22f5-4867-9137-e3f742fb70ab",
+        "kind": 0,
+        "standardColumnUid": null,
+        "title": "Сообщение",
+        "name": "text",
+        "formula": "",
+        "itemsSource": "",
+        "autoClearMethod": 0,
+        "isStandard": false,
+        "dataSettings": {
+          "dataTypeUid": "0234c067-7868-46b2-ba8e-e22fae5255cb",
+          "stringLength": 4000,
+          "numberDigits": 2,
+          "primaryKey": false,
+          "required": true,
+          "unique": false,
+          "defaultValue": null
+        },
+        "renderSettings": {
+          "controlKindUid": "",
+          "showInItem": true,
+          "showInList": true,
+          "listColumnWidth": ""
+        },
+        "validationSettings": {
+          "notEmpty": false
+        },
+        "dependencies": []
+      }
+    ],
+    "indexes": [
+      {
+        "uid": "625b3987-6f1c-4944-8a17-097d2a62b44a",
+        "columns": [
+          {
+            "columnUid": "66a631db-e3cb-4bb5-9387-8b181b64c26f",
+            "direction": 0
+          },
+          {
+            "columnUid": "8dd7c595-996d-49c1-8bda-d432c2f3faf3",
+            "direction": 0
+          }
+        ]
+      }
+    ]
+  },
+  "detailTables": [],
+  "commands": [],
+  "recordsSources": [],
+  "recordsSettings": []
+}
