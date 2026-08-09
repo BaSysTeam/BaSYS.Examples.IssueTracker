@@ -1,0 +1,13 @@
+// Формирование набора значений для загрузки в enum.issue_type.
+const data = createTable([
+    { name: 'name', dataType: 'string' },
+    { name: 'code', dataType: 'string' },
+    { name: 'title', dataType: 'string' }
+])
+    .addRow({ name: 'bug', code: '001', title: 'Ошибка' })
+    .addRow({ name: 'proposal', code: '002', title: 'Предложение' })
+    .addRow({ name: 'idea', code: '003', title: 'Идея' })
+    .addRow({ name: 'question', code: '004', title: 'Вопрос' })
+    .addRow({ name: 'specification', code: '005', title: 'ТЗ' });
+
+return data;
