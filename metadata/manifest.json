@@ -1,6 +1,6 @@
 {
   "formatVersion": "2.0",
-  "exportedAtUtc": "2026-08-09T11:55:13.9567884Z",
+  "exportedAtUtc": "2026-08-09T12:32:04.5083707Z",
   "hashAlgorithm": "SHA-256",
   "producer": {
     "application": "BaSys.Constructor",
@@ -14,7 +14,7 @@
     "dataTypes": 16,
     "metaObjects": 7,
     "dataViews": 0,
-    "workflows": 1,
+    "workflows": 7,
     "menus": 0,
     "excelReports": 0,
     "excelReportTemplates": 0,
@@ -25,9 +25,9 @@
     "dataSourceScripts": 0,
     "recordsSourceScripts": 0,
     "commandScripts": 0,
-    "workflowStepScripts": 1,
+    "workflowStepScripts": 7,
     "constructorFormScripts": 0,
-    "files": 26
+    "files": 38
   },
   "files": [
     {
@@ -315,6 +315,138 @@
       "version": 2,
       "sizeBytes": 2615,
       "sha256": "123f5ec7d71159b99492a30a937fd169096b86f5a4f666d7d684c7ff61b5c115"
+    },
+    {
+      "path": "workflow/fill_issue_status/workflow.fill_issue_status.step.data.bjs",
+      "category": "workflowStepScript",
+      "uid": "8e145c5c-580b-4706-941d-adc147fe6b99",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "data",
+      "version": 2,
+      "sizeBytes": 794,
+      "sha256": "97f7b008c039abd8f31afa0e1b144c7456749abed2ed8be7d181d8211e9a3087"
+    },
+    {
+      "path": "workflow/fill_issue_status/workflow.fill_issue_status.json",
+      "category": "workflow",
+      "uid": "8e145c5c-580b-4706-941d-adc147fe6b99",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "fill_issue_status",
+      "version": 2,
+      "sizeBytes": 2643,
+      "sha256": "5853a13cccb292789f860a3cd67bf688564cc8f649b80904f74d6565ae431238"
+    },
+    {
+      "path": "workflow/fill_task_status/workflow.fill_task_status.step.data.bjs",
+      "category": "workflowStepScript",
+      "uid": "b9ac8a07-8f81-4617-aca8-92ef45b262a6",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "data",
+      "version": 2,
+      "sizeBytes": 656,
+      "sha256": "7759cc068744dfd9ce6324dceb1dcfbe7439a2b59ec50d7b01108654384abe60"
+    },
+    {
+      "path": "workflow/fill_task_status/workflow.fill_task_status.json",
+      "category": "workflow",
+      "uid": "b9ac8a07-8f81-4617-aca8-92ef45b262a6",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "fill_task_status",
+      "version": 2,
+      "sizeBytes": 2609,
+      "sha256": "16b2e911fd1b65de996a3d9df7600ce9fd313e3c36e3445ebc0bcae48a8817e6"
+    },
+    {
+      "path": "workflow/fill_release_status/workflow.fill_release_status.step.data.bjs",
+      "category": "workflowStepScript",
+      "uid": "bdec525e-63c2-4277-8718-5dc4cc06a27e",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "data",
+      "version": 2,
+      "sizeBytes": 514,
+      "sha256": "c92e0a9493a0813c1736d1c9bb0a01deb4033f58c13e6818fdf953780a8f86a4"
+    },
+    {
+      "path": "workflow/fill_release_status/workflow.fill_release_status.json",
+      "category": "workflow",
+      "uid": "bdec525e-63c2-4277-8718-5dc4cc06a27e",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "fill_release_status",
+      "version": 2,
+      "sizeBytes": 2631,
+      "sha256": "761bea06b035f32f5acf55af78d2ba1137d8372ae7a3b2f1754f4e2cc75f8772"
+    },
+    {
+      "path": "workflow/fill_importance/workflow.fill_importance.step.data.bjs",
+      "category": "workflowStepScript",
+      "uid": "75074f12-169a-4d3a-b2b4-8d8762ab8c27",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "data",
+      "version": 2,
+      "sizeBytes": 556,
+      "sha256": "82fb00991bbd96a28227dc6fc06c818a683a15e79d84b538b557598757c4fddc"
+    },
+    {
+      "path": "workflow/fill_importance/workflow.fill_importance.json",
+      "category": "workflow",
+      "uid": "75074f12-169a-4d3a-b2b4-8d8762ab8c27",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "fill_importance",
+      "version": 2,
+      "sizeBytes": 2580,
+      "sha256": "78d60ca9d76ab18d16d146b8c7a6506d4ce8fa0e04199f831adcfad7119525eb"
+    },
+    {
+      "path": "workflow/fill_urgency/workflow.fill_urgency.step.data.bjs",
+      "category": "workflowStepScript",
+      "uid": "0ae6cda5-a5c7-4b86-9783-6ab149c18fcb",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "data",
+      "version": 2,
+      "sizeBytes": 562,
+      "sha256": "3e7c1a3c764e22aac937750b2a7781c25a3cedb8d349dea89546a7a4b330bffa"
+    },
+    {
+      "path": "workflow/fill_urgency/workflow.fill_urgency.json",
+      "category": "workflow",
+      "uid": "0ae6cda5-a5c7-4b86-9783-6ab149c18fcb",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "fill_urgency",
+      "version": 2,
+      "sizeBytes": 2582,
+      "sha256": "96fdca534c6744cc92752de268bbedf036cad48c16ecf6bd168697a2cdd462e8"
+    },
+    {
+      "path": "workflow/fill_primevue_color/workflow.fill_primevue_color.step.data.bjs",
+      "category": "workflowStepScript",
+      "uid": "6cfdcce1-4d5d-4683-987e-76eb41835537",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "data",
+      "version": 2,
+      "sizeBytes": 807,
+      "sha256": "0f8bbd41ce7097252472b99ef25ce1e1cbd05e016d59d076e26cebe56f47c2a2"
+    },
+    {
+      "path": "workflow/fill_primevue_color/workflow.fill_primevue_color.json",
+      "category": "workflow",
+      "uid": "6cfdcce1-4d5d-4683-987e-76eb41835537",
+      "kindUid": "8734f14e-13d0-4f74-a960-f21f74853cda",
+      "kindName": "workflow",
+      "name": "fill_primevue_color",
+      "version": 2,
+      "sizeBytes": 2645,
+      "sha256": "5b31397f51e7d6b87382de928f7f997e77df8ec8fe8dbab5d3ed1b1a3d66c7a3"
     }
   ]
 }

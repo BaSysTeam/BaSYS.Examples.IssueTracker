@@ -1,0 +1,15 @@
+// Формирование набора значений для загрузки в enum.primevue_color.
+const data = createTable([
+    { name: 'name', dataType: 'string' },
+    { name: 'code', dataType: 'string' },
+    { name: 'title', dataType: 'string' }
+])
+    .addRow({ name: 'primary', code: '001', title: 'Основной' })
+    .addRow({ name: 'secondary', code: '002', title: 'Вторичный' })
+    .addRow({ name: 'success', code: '003', title: 'Успех' })
+    .addRow({ name: 'info', code: '004', title: 'Информация' })
+    .addRow({ name: 'warning', code: '005', title: 'Предупреждение' })
+    .addRow({ name: 'danger', code: '006', title: 'Опасность' })
+    .addRow({ name: 'contrast', code: '007', title: 'Контрастный' });
+
+return data;

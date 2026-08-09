@@ -1,0 +1,12 @@
+// Формирование набора значений для загрузки в enum.importance.
+const data = createTable([
+    { name: 'name', dataType: 'string' },
+    { name: 'code', dataType: 'string' },
+    { name: 'title', dataType: 'string' }
+])
+    .addRow({ name: 'low', code: '001', title: 'Низкая' })
+    .addRow({ name: 'normal', code: '002', title: 'Обычная' })
+    .addRow({ name: 'high', code: '003', title: 'Высокая' })
+    .addRow({ name: 'critical', code: '004', title: 'Критическая' });
+
+return data;

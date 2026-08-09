@@ -1,0 +1,13 @@
+// Формирование набора значений для загрузки в enum.task_status.
+const data = createTable([
+    { name: 'name', dataType: 'string' },
+    { name: 'code', dataType: 'string' },
+    { name: 'title', dataType: 'string' }
+])
+    .addRow({ name: 'planned', code: '001', title: 'Запланирована' })
+    .addRow({ name: 'in_progress', code: '002', title: 'В работе' })
+    .addRow({ name: 'review', code: '003', title: 'На проверке' })
+    .addRow({ name: 'done', code: '004', title: 'Выполнена' })
+    .addRow({ name: 'canceled', code: '005', title: 'Отменена' });
+
+return data;

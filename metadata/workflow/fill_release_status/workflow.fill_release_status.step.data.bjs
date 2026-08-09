@@ -1,0 +1,11 @@
+// Формирование набора значений для загрузки в enum.release_status.
+const data = createTable([
+    { name: 'name', dataType: 'string' },
+    { name: 'code', dataType: 'string' },
+    { name: 'title', dataType: 'string' }
+])
+    .addRow({ name: 'planned', code: '001', title: 'Планируется' })
+    .addRow({ name: 'preparing', code: '002', title: 'Готовится' })
+    .addRow({ name: 'published', code: '003', title: 'Опубликован' });
+
+return data;

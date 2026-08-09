@@ -1,0 +1,71 @@
+{
+  "$schema": "../../system/schemas/workflowSettings.schema.json",
+  "uid": "bdec525e-63c2-4277-8718-5dc4cc06a27e",
+  "name": "fill_release_status",
+  "title": "01.004 Заполнение статусов релизов",
+  "memo": "Первоначальное заполнение перечисления статусов релизов.",
+  "isActive": true,
+  "version": 2,
+  "parameters": [],
+  "steps": [
+    {
+      "expression": "workflow.fill_release_status.step.data.bjs",
+      "uid": "6cb93b7a-db28-43ea-9dd3-70a7b1da0eaa",
+      "previousStepUid": "",
+      "kindUid": "dff616ce-0f40-4e44-a82b-14aa5ee2e4d6",
+      "kindName": "java_script",
+      "title": "Данные",
+      "name": "data",
+      "memo": "Подготовка DataTable со значениями статусов релизов.",
+      "isActive": true
+    },
+    {
+      "metaObjectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+      "metaObjectUid": "b03c6bce-e7c3-40df-86a3-c5897a1c6e12",
+      "saveRegime": 1,
+      "searchBy": "name",
+      "sourcePath": "data",
+      "condition": "",
+      "createRecords": false,
+      "skipHistory": false,
+      "headerMapping": [
+        {
+          "uid": "48554c39-90c3-4058-a400-e0b0a489a858",
+          "sourceFieldName": "name",
+          "destinationFieldName": "name",
+          "defaultValue": "",
+          "searchBy": "",
+          "dataTypeUid": "0234c067-7868-46b2-ba8e-e22fae5255cb",
+          "createIfNotExist": false
+        },
+        {
+          "uid": "7a2eefa7-b134-4795-b8b9-6305eefe01c0",
+          "sourceFieldName": "code",
+          "destinationFieldName": "code",
+          "defaultValue": "",
+          "searchBy": "",
+          "dataTypeUid": "0234c067-7868-46b2-ba8e-e22fae5255cb",
+          "createIfNotExist": false
+        },
+        {
+          "uid": "c5b8a361-2160-48e5-8090-121d72ddeb54",
+          "sourceFieldName": "title",
+          "destinationFieldName": "title",
+          "defaultValue": "",
+          "searchBy": "",
+          "dataTypeUid": "0234c067-7868-46b2-ba8e-e22fae5255cb",
+          "createIfNotExist": false
+        }
+      ],
+      "tableMapping": [],
+      "uid": "3232d042-985d-4006-b149-4c03702bbcbb",
+      "previousStepUid": "6cb93b7a-db28-43ea-9dd3-70a7b1da0eaa",
+      "kindUid": "a7edd0be-6f12-4fac-b88a-4f83acc7dacb",
+      "kindName": "data_object_loader",
+      "title": "Загрузка данных",
+      "name": "load",
+      "memo": "Создание отсутствующих статусов релизов без дублирования при повторном запуске.",
+      "isActive": true
+    }
+  ]
+}

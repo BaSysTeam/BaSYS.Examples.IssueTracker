@@ -1,0 +1,15 @@
+// Формирование набора значений для загрузки в enum.issue_status.
+const data = createTable([
+    { name: 'name', dataType: 'string' },
+    { name: 'code', dataType: 'string' },
+    { name: 'title', dataType: 'string' }
+])
+    .addRow({ name: 'new', code: '001', title: 'Новое' })
+    .addRow({ name: 'review', code: '002', title: 'На рассмотрении' })
+    .addRow({ name: 'accepted', code: '003', title: 'Принято' })
+    .addRow({ name: 'in_progress', code: '004', title: 'В работе' })
+    .addRow({ name: 'done', code: '005', title: 'Выполнено' })
+    .addRow({ name: 'rejected', code: '006', title: 'Отклонено' })
+    .addRow({ name: 'duplicate', code: '007', title: 'Дубликат' });
+
+return data;

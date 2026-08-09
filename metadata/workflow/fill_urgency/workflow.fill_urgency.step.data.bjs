@@ -1,0 +1,12 @@
+// Формирование набора значений для загрузки в enum.urgency.
+const data = createTable([
+    { name: 'name', dataType: 'string' },
+    { name: 'code', dataType: 'string' },
+    { name: 'title', dataType: 'string' }
+])
+    .addRow({ name: 'not_urgent', code: '001', title: 'Не срочно' })
+    .addRow({ name: 'normal', code: '002', title: 'Обычно' })
+    .addRow({ name: 'urgent', code: '003', title: 'Срочно' })
+    .addRow({ name: 'immediate', code: '004', title: 'Немедленно' });
+
+return data;
