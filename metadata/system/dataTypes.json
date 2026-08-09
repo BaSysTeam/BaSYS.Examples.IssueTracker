@@ -88,5 +88,15 @@
     "dbType": 9,
     "objectKindUid": null,
     "typeName": "System.Guid"
+  },
+  {
+    "uid": "2005bb12-b7d4-40ee-a3b7-edfdacd079a0",
+    "kind": "enum",
+    "name": "issue_type",
+    "title": "Перечисление.Тип обращения",
+    "isPrimitive": false,
+    "dbType": 16,
+    "objectKindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+    "typeName": null
   }
 ]

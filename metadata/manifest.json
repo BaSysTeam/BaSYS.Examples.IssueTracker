@@ -1,6 +1,6 @@
 {
   "formatVersion": "2.0",
-  "exportedAtUtc": "2026-08-08T16:01:24.6640158Z",
+  "exportedAtUtc": "2026-08-09T11:39:02.446698Z",
   "hashAlgorithm": "SHA-256",
   "producer": {
     "application": "BaSys.Constructor",
@@ -11,8 +11,8 @@
   },
   "counts": {
     "kinds": 9,
-    "dataTypes": 9,
-    "metaObjects": 0,
+    "dataTypes": 10,
+    "metaObjects": 1,
     "dataViews": 0,
     "workflows": 0,
     "menus": 0,
@@ -27,7 +27,7 @@
     "commandScripts": 0,
     "workflowStepScripts": 0,
     "constructorFormScripts": 0,
-    "files": 17
+    "files": 18
   },
   "files": [
     {
@@ -214,8 +214,19 @@
       "kindName": null,
       "name": null,
       "version": null,
-      "sizeBytes": 1960,
-      "sha256": "dbc1c7b3de5a7dbe4ffb8af1bf4dcaedfe299e2647ebac9c6d4a12c383f1a459"
+      "sizeBytes": 2259,
+      "sha256": "4c7cface1741f787a2c2eada14627e523f3b962959ad8ae7309d1693cac5fbdf"
+    },
+    {
+      "path": "enum/issue_type/enum.issue_type.json",
+      "category": "metaObject",
+      "uid": "2005bb12-b7d4-40ee-a3b7-edfdacd079a0",
+      "kindUid": "5449a8ad-9359-41b2-8ff2-3f415eb4da76",
+      "kindName": "enum",
+      "name": "issue_type",
+      "version": 1,
+      "sizeBytes": 4740,
+      "sha256": "bfdd299cbb667cac6cbd638cc03d0343e970342fcf96d1220656cb409f61a8d8"
     }
   ]
 }
