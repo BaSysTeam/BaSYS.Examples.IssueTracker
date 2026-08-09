@@ -160,6 +160,16 @@
     "typeName": null
   },
   {
+    "uid": "59a10456-44a4-4fb5-b60e-d45c6510af67",
+    "kind": "catalog",
+    "name": "release",
+    "title": "Справочник.Релиз",
+    "isPrimitive": false,
+    "dbType": 11,
+    "objectKindUid": "032d8377-500f-4631-b435-1f7f69046674",
+    "typeName": null
+  },
+  {
     "uid": "00e33d83-9317-4c20-b710-444eaf83902a",
     "kind": "catalog",
     "name": "tag",

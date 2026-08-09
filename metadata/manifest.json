@@ -1,6 +1,6 @@
 {
   "formatVersion": "2.0",
-  "exportedAtUtc": "2026-08-09T13:22:35.4637368Z",
+  "exportedAtUtc": "2026-08-09T13:31:03.7208887Z",
   "hashAlgorithm": "SHA-256",
   "producer": {
     "application": "BaSys.Constructor",
@@ -11,8 +11,8 @@
   },
   "counts": {
     "kinds": 9,
-    "dataTypes": 18,
-    "metaObjects": 9,
+    "dataTypes": 19,
+    "metaObjects": 10,
     "dataViews": 0,
     "workflows": 7,
     "menus": 0,
@@ -27,7 +27,7 @@
     "commandScripts": 0,
     "workflowStepScripts": 7,
     "constructorFormScripts": 0,
-    "files": 40
+    "files": 41
   },
   "files": [
     {
@@ -214,8 +214,8 @@
       "kindName": null,
       "name": null,
       "version": null,
-      "sizeBytes": 4613,
-      "sha256": "3fb82bc1589f32d7720b8cd30c77d11e56660e85924bfb2530fbf12aa10ddb10"
+      "sizeBytes": 4893,
+      "sha256": "488776a6ca33c02bdefdc42abffc6b836f6a652222834b59df7d310af7a01afa"
     },
     {
       "path": "enum/importance/enum.importance.json",
@@ -295,6 +295,17 @@
       "sha256": "3100ffc2ed98a48409f167a5c3132a41ee5b4fe085526a986f0f4dc04ceda296"
     },
     {
+      "path": "catalog/release/catalog.release.json",
+      "category": "metaObject",
+      "uid": "59a10456-44a4-4fb5-b60e-d45c6510af67",
+      "kindUid": "032d8377-500f-4631-b435-1f7f69046674",
+      "kindName": "catalog",
+      "name": "release",
+      "version": 1,
+      "sizeBytes": 9091,
+      "sha256": "215ac26a4eb8466272bc8d4ea82841b6fa29b71bddfc4e5215da102b0f89f06c"
+    },
+    {
       "path": "catalog/tag/catalog.tag.json",
       "category": "metaObject",
       "uid": "00e33d83-9317-4c20-b710-444eaf83902a",
@@ -312,9 +323,9 @@
       "kindUid": "032d8377-500f-4631-b435-1f7f69046674",
       "kindName": "catalog",
       "name": "person",
-      "version": 1,
-      "sizeBytes": 9591,
-      "sha256": "07bd33354013e1414ce3d5ae44a3c9595969ae2ca9f251799cb2d806198a6295"
+      "version": 2,
+      "sizeBytes": 9593,
+      "sha256": "eabf5c58ca975495636c9225dd62fe958ce7f98341864fa909ddc73d6ac830e7"
     },
     {
       "path": "workflow/fill_issue_type/workflow.fill_issue_type.step.data.bjs",
